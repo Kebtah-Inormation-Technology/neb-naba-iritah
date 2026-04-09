@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neb NABA Iritah Shenmira — Indigenous Leaders & Wisdom Keeper </title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Cinzel:wght@400;500;600&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E8C96A;
+    --gold-dim: #8A6A2A;
+    --void: #080708;
+    --deep: #0E0D10;
+    --surface: #151319;
+    --card: #1C1A21;
+    --border: rgba(201,168,76,0.18);
+    --border-bright: rgba(201,168,76,0.5);
+    --text-primary: #F2EDE0;
+    --text-secondary: #A89E85;
+    --text-muted: #5C5549;
+    --accent-earth: #7A4E2D;
+    --accent-terracotta: #C46B3A;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--void);
+    color: var(--text-primary);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  /* ─── GEOMETRIC BACKGROUND LAYER ─── */
+  .geo-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+    opacity: 0.04;
+  }
+
+  .geo-bg svg { width: 100%; height: 100%; }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.5rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.5px solid transparent;
+    transition: all 0.5s ease;
+  }
+
+  nav.scrolled {
+    background: rgba(8,7,8,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom-color: var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover { color: var(--gold-light); }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 8rem 4rem 4rem;
+    z-index: 1;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(201,168,76,0.06) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 60% at 10% 80%, rgba(122,78,45,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.45em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    animation: fadeUp 1s ease 0.2s both;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 8vw, 7.5rem);
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+    animation: fadeUp 1s ease 0.4s both;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text-secondary);
+    margin: 1.5rem 0 2.5rem;
+    max-width: 600px;
+    animation: fadeUp 1s ease 0.6s both;
+  }
+
+  .hero-roles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+    animation: fadeUp 1s ease 0.8s both;
+  }
+
+  .role-pill {
+    border: 0.5px solid var(--border-bright);
+    padding: 0.4rem 1.2rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1.5rem;
+    animation: fadeUp 1s ease 1s both;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--void);
+    padding: 0.9rem 2.5rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary:hover { background: var(--gold-light); }
+
+  .btn-ghost {
+    border: 0.5px solid var(--border-bright);
+    color: var(--text-secondary);
+    padding: 0.9rem 2.5rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold-light); }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    animation: fadeIn 1s ease 1.5s both;
+  }
+
+  .hero-scroll span {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .scroll-line {
+    width: 0.5px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--gold-dim), transparent);
+    animation: scrollPulse 2s ease infinite;
+  }
+
+  /* ─── DIVIDER ─── */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 4rem;
+    margin: 2rem 0;
+  }
+
+  .divider-line { flex: 1; height: 0.5px; background: var(--border); }
+  .divider-glyph {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    color: var(--gold-dim);
+  }
+
+  /* ─── SECTIONS ─── */
+  section { position: relative; z-index: 1; }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 4rem;
+  }
+
+  .section-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.45em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 0.5px;
+    background: var(--gold-dim);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title em { font-style: italic; color: var(--gold-light); }
+
+  /* ─── ABOUT ─── */
+  #about { background: var(--deep); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .about-portrait {
+    position: relative;
+  }
+
+  .portrait-frame {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: var(--card);
+    border: 0.5px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .portrait-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(201,168,76,0.05) 0%, transparent 50%, rgba(122,78,45,0.1) 100%);
+  }
+
+  .portrait-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .portrait-placeholder svg { opacity: 0.15; }
+
+  .portrait-placeholder p {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  .portrait-accent {
+    position: absolute;
+    bottom: -1.5rem;
+    right: -1.5rem;
+    width: 60%;
+    height: 60%;
+    border: 0.5px solid var(--border-bright);
+    pointer-events: none;
+  }
+
+  .portrait-badge {
+    position: absolute;
+    top: 2rem;
+    left: -2rem;
+    background: var(--gold);
+    color: var(--void);
+    padding: 1rem 1.5rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    line-height: 1.6;
+    max-width: 160px;
+  }
+
+  .about-text p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+  }
+
+  .about-text p:first-of-type {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--text-primary);
+    line-height: 1.6;
+  }
+
+  .credentials {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .cred-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .cred-icon {
+    width: 32px;
+    height: 32px;
+    border: 0.5px solid var(--border-bright);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--gold);
+    font-size: 0.8rem;
+  }
+
+  .cred-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: var(--gold-light);
+    margin-bottom: 0.25rem;
+  }
+
+  .cred-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* ─── SERVICES ─── */
+  #services { background: var(--void); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin-top: 3rem;
+  }
+
+  .service-card {
+    background: var(--void);
+    padding: 3rem 2.5rem;
+    transition: background 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+  }
+
+  .service-card:hover { background: var(--surface); }
+  .service-card:hover::after { transform: scaleX(1); }
+
+  .service-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--border-bright);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  .service-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-link {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+  }
+
+  .service-link:hover { color: var(--gold-light); }
+
+  /* ─── BOOKS ─── */
+  #books { background: var(--surface); }
+
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .book-card {
+    background: var(--card);
+    border: 0.5px solid var(--border);
+    transition: border-color 0.4s ease, transform 0.4s ease;
+  }
+
+  .book-card:hover {
+    border-color: var(--border-bright);
+    transform: translateY(-4px);
+  }
+
+  .book-cover {
+    aspect-ratio: 3/4;
+    background: var(--deep);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .book-cover-inner {
+    padding: 2rem;
+    text-align: center;
+    border: 0.5px solid var(--border);
+    margin: 1.5rem;
+    width: calc(100% - 3rem);
+    height: calc(100% - 3rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .book-cover-ornament {
+    color: var(--gold-dim);
+    font-size: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .book-cover-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-primary);
+    line-height: 1.4;
+  }
+
+  .book-cover-author {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+  }
+
+  .book-info {
+    padding: 1.5rem;
+    border-top: 0.5px solid var(--border);
+  }
+
+  .book-type {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 0.5rem;
+  }
+
+  .book-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .book-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  /* ─── SPEAKING ─── */
+  #speaking { background: var(--deep); }
+
+  .speaking-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .speaking-text p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .topics-list {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .topic-item {
+    padding: 1rem 0;
+    border-bottom: 0.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+  }
+
+  .topic-item::before {
+    content: '◆';
+    color: var(--gold-dim);
+    font-size: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .appearances-panel {
+    background: var(--card);
+    border: 0.5px solid var(--border);
+    padding: 2.5rem;
+  }
+
+  .appearances-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  .appearance-item {
+    padding: 1rem 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .appearance-item:last-child { border-bottom: none; }
+
+  .appearance-platform {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--gold-light);
+    margin-bottom: 0.25rem;
+  }
+
+  .appearance-show {
+    font-size: 0.88rem;
+    color: var(--text-primary);
+    margin-bottom: 0.15rem;
+  }
+
+  .appearance-tag {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+
+  /* ─── PILGRIMAGES ─── */
+  #pilgrimages { background: var(--void); }
+
+  .pilgrimages-intro {
+    max-width: 700px;
+    margin-bottom: 3rem;
+  }
+
+  .pilgrimages-intro p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+  }
+
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .event-card {
+    border: 0.5px solid var(--border);
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    transition: border-color 0.4s ease;
+  }
+
+  .event-card:hover { border-color: var(--border-bright); }
+
+  .event-date-block {
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .event-month {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .event-day {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--text-primary);
+    line-height: 1;
+    display: block;
+  }
+
+  .event-year {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    display: block;
+  }
+
+  .event-details { flex: 1; }
+
+  .event-type {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 0.5rem;
+  }
+
+  .event-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .event-location {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .event-link {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 0.5px solid var(--gold-dim);
+    padding-bottom: 0.1rem;
+    transition: color 0.3s ease;
+  }
+
+  .event-link:hover { color: var(--gold-light); }
+
+  /* ─── DIVINATION CTA ─── */
+  .divination-banner {
+    background: var(--surface);
+    border-top: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+    padding: 5rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .divination-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 100% at 50% 50%, rgba(201,168,76,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .banner-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .banner-desc {
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    font-size: 1rem;
+  }
+
+  /* ─── MEDIA / COURSES ─── */
+  #media { background: var(--deep); }
+
+  .media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .media-card {
+    background: var(--card);
+    border: 0.5px solid var(--border);
+    padding: 1.75rem;
+    transition: all 0.4s ease;
+  }
+
+  .media-card:hover {
+    border-color: var(--border-bright);
+    background: var(--surface);
+  }
+
+  .media-type {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .media-type::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 0.5px;
+    background: var(--gold-dim);
+  }
+
+  .media-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+  }
+
+  .media-source {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .media-link {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+  }
+
+  .media-link:hover { color: var(--gold-light); }
+
+  /* ─── CONTACT ─── */
+  #contact { background: var(--void); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .contact-text p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+  }
+
+  .contact-channels {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .channel-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 0.5px solid var(--border);
+    text-decoration: none;
+    transition: border-color 0.3s ease;
+  }
+
+  .channel-item:hover { border-color: var(--border-bright); }
+
+  .channel-icon {
+    width: 36px;
+    height: 36px;
+    border: 0.5px solid var(--border-bright);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  .channel-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.15rem;
+  }
+
+  .channel-value {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+  }
+
+  .form-input, .form-select, .form-textarea {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    color: var(--text-primary);
+    padding: 0.85rem 1rem;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+    width: 100%;
+  }
+
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--border-bright);
+  }
+
+  .form-textarea { min-height: 120px; resize: vertical; }
+
+  .form-select { cursor: pointer; }
+
+  .form-select option { background: var(--surface); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--void);
+    border-top: 0.5px solid var(--border);
+    padding: 3rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .footer-links a {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-links a:hover { color: var(--gold-dim); }
+
+  .footer-copy {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* ─── REVEAL ANIMATION ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 1.5rem 2rem; }
+    .nav-links { display: none; }
+    .hero { padding: 7rem 2rem 4rem; }
+    .section-inner { padding: 4rem 2rem; }
+    .about-grid, .speaking-hero, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .services-grid, .books-grid, .media-grid { grid-template-columns: 1fr; }
+    .events-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+    .portrait-badge { display: none; }
+    .portrait-accent { display: none; }
+    .divination-banner { padding: 4rem 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Geometric Background -->
+<div class="geo-bg" aria-hidden="true">
+  <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="dogon-grid" width="120" height="120" patternUnits="userSpaceOnUse">
+        <path d="M60 10 L110 35 L110 85 L60 110 L10 85 L10 35 Z" stroke="#C9A84C" stroke-width="0.5" fill="none"/>
+        <line x1="60" y1="10" x2="60" y2="110" stroke="#C9A84C" stroke-width="0.3"/>
+        <line x1="10" y1="60" x2="110" y2="60" stroke="#C9A84C" stroke-width="0.3"/>
+        <circle cx="60" cy="60" r="20" stroke="#C9A84C" stroke-width="0.3" fill="none"/>
+        <circle cx="60" cy="60" r="6" stroke="#C9A84C" stroke-width="0.3" fill="none"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#dogon-grid)"/>
+    <circle cx="720" cy="450" r="300" stroke="#C9A84C" stroke-width="0.5" fill="none"/>
+    <circle cx="720" cy="450" r="200" stroke="#C9A84C" stroke-width="0.3" fill="none"/>
+    <circle cx="720" cy="450" r="100" stroke="#C9A84C" stroke-width="0.3" fill="none"/>
+    <line x1="720" y1="150" x2="720" y2="750" stroke="#C9A84C" stroke-width="0.3"/>
+    <line x1="420" y1="450" x2="1020" y2="450" stroke="#C9A84C" stroke-width="0.3"/>
+    <line x1="460" y1="190" x2="980" y2="710" stroke="#C9A84C" stroke-width="0.2"/>
+    <line x1="980" y1="190" x2="460" y2="710" stroke="#C9A84C" stroke-width="0.2"/>
+  </svg>
+</div>
+
+<!-- Navigation -->
+<nav id="main-nav">
+  <a href="#" class="nav-logo">NABA Iritah Shenmira</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#books">Books</a></li>
+    <li><a href="#speaking">Speaking</a></li>
+    <li><a href="#pilgrimages">Pilgrimages</a></li>
+    <li><a href="#media">Media</a></li>
+    <li><a href="#contact">Connect</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <p class="hero-eyebrow">Dogon High Priest · M'TAM Diviner · Global Emissary</p>
+  <h1 class="hero-title">NABA<br><em>Iritah</em><br>Shenmira</h1>
+  <p class="hero-subtitle">Bridging the invisible and visible — where ancestral wisdom meets the modern world.</p>
+  <div class="hero-roles">
+    <span class="role-pill">Diviner</span>
+    <span class="role-pill">Healer</span>
+    <span class="role-pill">Author</span>
+    <span class="role-pill">International Speaker</span>
+    <span class="role-pill">Cultural Emissary</span>
+    <span class="role-pill">Indigenous Thought Leader</span>
+  </div>
+  <div class="hero-cta">
+    <a href="#services" class="btn-primary">Seek a Reading</a>
+    <a href="#about" class="btn-ghost">Learn More</a>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-portrait reveal">
+        <div class="portrait-frame">
+          <div class="portrait-placeholder">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40" cy="28" r="16" stroke="#C9A84C" stroke-width="0.5"/>
+              <path d="M10 72 Q40 52 70 72" stroke="#C9A84C" stroke-width="0.5" fill="none"/>
+              <circle cx="40" cy="40" r="38" stroke="#C9A84C" stroke-width="0.3"/>
+            </svg>
+            <p>Portrait Photograph</p>
+          </div>
+        </div>
+        <div class="portrait-accent"></div>
+        <div class="portrait-badge">
+          Commissioned<br>Emissary of the<br>Gulmu Kingdom
+        </div>
+      </div>
+
+      <div class="about-text reveal">
+        <p class="section-label">Origin & Lineage</p>
+        <h2 class="section-title">Chosen from<br>within a <em>lineage</em></h2>
+        <p>To understand NABA Iritah Shenmira, you must first understand what it means to be chosen by a lineage — not appointed, not trained from the outside, but recognized from within.</p>
+        <p>A high priest and healer of the Dogon bloodline from the Gulmu region of Meritah (Africa), NABA Iritah is the son of the late Master Naba Lamoussa Morodenibig — a legendary Dogon prophet who dedicated his life to educating humanity on its original spiritual principles.</p>
+        <p>Born among the Tem people in Togo, he entered initiations and apprenticeships with priests and healers from boyhood, enduring the full rites of passage. After his father's passing, he stepped fully into his calling — ordained within three months, carrying the mission of his ancestors to a global stage.</p>
+
+        <div class="credentials">
+          <div class="cred-item">
+            <div class="cred-icon">◈</div>
+            <div>
+              <div class="cred-title">Director of Education — Kebtah</div>
+              <div class="cred-desc">International nonprofit preserving and promoting indigenous culture worldwide.</div>
+            </div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-icon">◈</div>
+            <div>
+              <div class="cred-title">M'TAM Divination System</div>
+              <div class="cred-desc">Ancient science of Earth's dialogue of energies — over 70,000 years in practice.</div>
+            </div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-icon">◈</div>
+            <div>
+              <div class="cred-title">Royal Commissioning</div>
+              <div class="cred-desc">Granted authority by the King of the Gulmu Kingdom to represent and protect Dogon traditions.</div>
+            </div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-icon">◈</div>
+            <div>
+              <div class="cred-title">Ankhkasta Natural Healing</div>
+              <div class="cred-desc">Leadership role in a unique collective of indigenous healers practicing ancestral medicine.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+  <div class="section-inner">
+    <p class="section-label reveal">What NABA Offers</p>
+    <h2 class="section-title reveal">Services &<br><em>Sacred Consultations</em></h2>
+
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="service-number">01</div>
+        <div class="service-title">M'TAM Divination</div>
+        <p class="service-desc">An ancient science rooted in the Earth's dialogue of energies, NABA's divination readings bridge the physical, energetic, and spiritual dimensions of your life. Solution-oriented guidance spanning health, purpose, relationships, and destiny.</p>
+        <a href="#contact" class="service-link">Book a Reading →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-number">02</div>
+        <div class="service-title">Indigenous Healing</div>
+        <p class="service-desc">Health consultations drawing from ancestral medicine traditions spanning generations. Through Ankhkasta Natural Healing, NABA and his collective of indigenous healers address the root causes of imbalance in body, mind, and spirit.</p>
+        <a href="#contact" class="service-link">Consult a Healer →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-number">03</div>
+        <div class="service-title">Leadership Consulting</div>
+        <p class="service-desc">With formal training in accounting and deep initiation in indigenous governing frameworks, NABA advises organizations seeking to integrate ancestral wisdom into contemporary leadership structures. Collectivist, accountable, tradition-rooted.</p>
+        <a href="#contact" class="service-link">Explore Partnership →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-number">04</div>
+        <div class="service-title">Keynote Speaking</div>
+        <p class="service-desc">Fluent in French, English, and several indigenous dialects, NABA delivers transformative addresses at global conferences, institutions, and summits — among the most compelling indigenous voices on spirituality, healing, and cultural preservation.</p>
+        <a href="#speaking" class="service-link">Inquire for Events →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-number">05</div>
+        <div class="service-title">Pilgrimages to Meritah</div>
+        <p class="service-desc">Annual group pilgrimages and immersive retreats to West Africa that reconnect people across the diaspora to their traditional roots. Sacred journeys that transform through direct encounter with living ancestral traditions.</p>
+        <a href="#pilgrimages" class="service-link">View Upcoming Journeys →</a>
+      </div>
+      <div class="service-card">
+        <div class="service-number">06</div>
+        <div class="service-title">Courses & Teachings</div>
+        <p class="service-desc">Ongoing instruction in indigenous cosmology, spiritual principles, and the M'TAM system of knowledge. From online modules to in-person intensives, NABA's educational offerings serve seekers at every level of understanding.</p>
+        <a href="#media" class="service-link">View Courses →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Books -->
+<section id="books">
+  <div class="section-inner">
+    <p class="section-label reveal">Published Works</p>
+    <h2 class="section-title reveal">Books &<br><em>Writings</em></h2>
+
+    <div class="books-grid reveal">
+      <div class="book-card">
+        <div class="book-cover">
+          <div class="book-cover-inner">
+            <div class="book-cover-ornament">✦</div>
+            <div class="book-cover-title">Book of Purifications</div>
+            <div class="book-cover-author">NABA Iritah Shenmira</div>
+          </div>
+        </div>
+        <div class="book-info">
+          <div class="book-type">Co-Authored · Sacred Text</div>
+          <div class="book-name">Book of Purifications</div>
+          <p class="book-desc">Ancestral teachings on purification practices across the physical, energetic, and spiritual dimensions of human existence.</p>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">
+          <div class="book-cover-inner">
+            <div class="book-cover-ornament">✦</div>
+            <div class="book-cover-title">Initiatic Tales of Hej-Ptah</div>
+            <div class="book-cover-author">NABA Iritah Shenmira</div>
+          </div>
+        </div>
+        <div class="book-info">
+          <div class="book-type">Co-Authored · Initiatic Lore</div>
+          <div class="book-name">Initiatic Tales of Hej-Ptah</div>
+          <p class="book-desc">Stories rooted in Kemetic tradition that illuminate the initiatic path and the cosmological principles underlying human evolution.</p>
+        </div>
+      </div>
+      <div class="book-card">
+        <div class="book-cover">
+          <div class="book-cover-inner">
+            <div class="book-cover-ornament">✦</div>
+            <div class="book-cover-title">Philosophy Podium: A Dogon Perspective</div>
+            <div class="book-cover-author">NABA Iritah Shenmira</div>
+          </div>
+        </div>
+        <div class="book-info">
+          <div class="book-type">Co-Authored · Philosophy</div>
+          <div class="book-name">Philosophy Podium</div>
+          <p class="book-desc">A Dogon perspective on foundational philosophical questions — presenting the ancestral worldview as a living, actionable intelligence.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Speaking -->
+<section id="speaking">
+  <div class="section-inner">
+    <div class="speaking-hero">
+      <div class="speaking-text reveal">
+        <p class="section-label">Global Voice</p>
+        <h2 class="section-title">International<br><em>Speaker & Lecturer</em></h2>
+        <p>NABA Iritah is consistently named among the most compelling indigenous voices in global conversations on spirituality, healing, and cultural preservation. His defining gift is the ability to unify worlds — meeting his audience at the threshold between ancient and modern.</p>
+        <p>He has appeared on global platforms, podcasts, and conferences spanning multiple continents — delivering teachings that transform audiences across spiritual traditions, academic institutions, wellness communities, and leadership summits.</p>
+
+        <div class="topics-list">
+          <div class="topic-item">Dogon Cosmology & the Origins of Civilization</div>
+          <div class="topic-item">Indigenous Governance & Ancestral Leadership</div>
+          <div class="topic-item">The M'TAM System of Divination & Energy Science</div>
+          <div class="topic-item">Healing Across Physical, Energetic & Spiritual Dimensions</div>
+          <div class="topic-item">Cultural Preservation in the Modern World</div>
+          <div class="topic-item">Reconnecting the Diaspora to Traditional Roots</div>
+          <div class="topic-item">The Intersection of Ancestral Wisdom & Contemporary Systems</div>
+        </div>
+      </div>
+
+      <div class="appearances-panel reveal">
+        <div class="appearances-title">Notable Appearances</div>
+        <div class="appearance-item">
+          <div class="appearance-platform">Podcast</div>
+          <div class="appearance-show">Alyson Charles — Rock'n'Roll Shaman</div>
+          <div class="appearance-tag">Reuniting Humanity with Dogon High Priest</div>
+        </div>
+        <div class="appearance-item">
+          <div class="appearance-platform">Podcast</div>
+          <div class="appearance-show">Luke Storey — The Lifestyle Stylist</div>
+          <div class="appearance-tag">Dogon Tribal Wisdom, Myths of Time & Language</div>
+        </div>
+        <div class="appearance-item">
+          <div class="appearance-platform">Portal</div>
+          <div class="appearance-show">Project Camelot</div>
+          <div class="appearance-tag">The Dogon Speak to the World</div>
+        </div>
+        <div class="appearance-item">
+          <div class="appearance-platform">Conference</div>
+          <div class="appearance-show">International Indigenous Summits</div>
+          <div class="appearance-tag">Multiple appearances across North America & Europe</div>
+        </div>
+        <div class="appearance-item">
+          <div class="appearance-platform">Academic</div>
+          <div class="appearance-show">Universities & Cultural Institutions</div>
+          <div class="appearance-tag">Guest lecturer on indigenous science & cosmology</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pilgrimages -->
+<section id="pilgrimages">
+  <div class="section-inner">
+    <p class="section-label reveal">Sacred Journeys</p>
+    <h2 class="section-title reveal">Pilgrimages &<br><em>Retreats</em></h2>
+    <div class="pilgrimages-intro reveal">
+      <p>NABA Iritah leads annual pilgrimages to West Africa and retreats around the world — immersive journeys that reconnect people across the diaspora and beyond to their traditional roots through direct encounter with living ancestral traditions.</p>
+    </div>
+
+    <div class="events-grid reveal">
+      <div class="event-card">
+        <div class="event-date-block">
+          <span class="event-month">TBD</span>
+          <span class="event-day">—</span>
+          <span class="event-year">2025</span>
+        </div>
+        <div class="event-details">
+          <div class="event-type">Annual Pilgrimage</div>
+          <div class="event-name">Journey to Meritah (West Africa)</div>
+          <div class="event-location">Gulmu Region, West Africa</div>
+          <a href="#contact" class="event-link">Join the Waitlist</a>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-date-block">
+          <span class="event-month">TBD</span>
+          <span class="event-day">—</span>
+          <span class="event-year">2025</span>
+        </div>
+        <div class="event-details">
+          <div class="event-type">International Retreat</div>
+          <div class="event-name">Ancestral Wisdom Immersion</div>
+          <div class="event-location">Jamaica / Caribbean</div>
+          <a href="#contact" class="event-link">Express Interest</a>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-date-block">
+          <span class="event-month">TBD</span>
+          <span class="event-day">—</span>
+          <span class="event-year">2025</span>
+        </div>
+        <div class="event-details">
+          <div class="event-type">Healing Retreat</div>
+          <div class="event-name">Ankhkasta Healing Intensive</div>
+          <div class="event-location">North America</div>
+          <a href="#contact" class="event-link">Learn More</a>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-date-block">
+          <span class="event-month">Ongoing</span>
+          <span class="event-day">∞</span>
+          <span class="event-year"></span>
+        </div>
+        <div class="event-details">
+          <div class="event-type">Online Teachings</div>
+          <div class="event-name">M'TAM Study Circles</div>
+          <div class="event-location">Virtual — Global</div>
+          <a href="#media" class="event-link">View Courses</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<div class="divination-banner">
+  <h2 class="banner-title">"Where others see contradiction,<br>NABA Iritah sees a threshold."</h2>
+  <p class="banner-desc">At that threshold, transformation becomes possible. Request a personal M'TAM divination reading and begin your journey.</p>
+  <a href="#contact" class="btn-primary">Request a Reading</a>
+</div>
+
+<!-- Media / Courses -->
+<section id="media">
+  <div class="section-inner">
+    <p class="section-label reveal">Media & Education</p>
+    <h2 class="section-title reveal">Podcasts, Courses<br>& <em>Teachings</em></h2>
+
+    <div class="media-grid reveal">
+      <div class="media-card">
+        <div class="media-type">Podcast Feature</div>
+        <div class="media-title">Reuniting Humanity with Dogon High Priest NABA Iritah</div>
+        <div class="media-source">Alyson Charles — Rock'n'Roll Shaman</div>
+        <a href="https://www.alysoncharles.com/podcast/2023/3/22/reuniting-humanity-with-dogon-high-priest-naba-iritah-shenmira" class="media-link" target="_blank">Listen Now →</a>
+      </div>
+      <div class="media-card">
+        <div class="media-type">Podcast Feature</div>
+        <div class="media-title">Dogon Tribal Wisdom, Myths of Time, Language & Selective History</div>
+        <div class="media-source">Luke Storey — The Lifestyle Stylist, Episode 489</div>
+        <a href="https://www.lukestorey.com/lifestylistpodcast/dogon-tribal-wisdom-the-myths-of-time-language-selective-history-w-naba-iritah-489" class="media-link" target="_blank">Listen Now →</a>
+      </div>
+      <div class="media-card">
+        <div class="media-type">Online Course</div>
+        <div class="media-title">Introduction to M'TAM — The Ancient Science of Earth's Energies</div>
+        <div class="media-source">Kebtah · Education Division</div>
+        <a href="#contact" class="media-link">Inquire to Enroll →</a>
+      </div>
+      <div class="media-card">
+        <div class="media-type">Online Course</div>
+        <div class="media-title">Dogon Cosmology & the Origins of Human Civilization</div>
+        <div class="media-source">Dogon Wisdom · International Platform</div>
+        <a href="https://www.dogonwisdom.com/about" class="media-link" target="_blank">Learn More →</a>
+      </div>
+      <div class="media-card">
+        <div class="media-type">Articles</div>
+        <div class="media-title">Indigenous History, Perspective & Contemporary Commentary</div>
+        <div class="media-source">Published across international journals and cultural platforms</div>
+        <a href="#contact" class="media-link">Request Access →</a>
+      </div>
+      <div class="media-card">
+        <div class="media-type">Archive · Interview</div>
+        <div class="media-title">The Dogon Speak to the World</div>
+        <div class="media-source">Project Camelot Portal</div>
+        <a href="https://projectcamelotportal.com/2011/07/29/the-dogon-speak-to-the-world/" class="media-link" target="_blank">Watch / Read →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-text reveal">
+        <p class="section-label">Begin Your Journey</p>
+        <h2 class="section-title">Connect with<br><em>NABA Iritah</em></h2>
+        <p>Whether you are seeking a personal divination reading, healing consultation, speaking engagement, pilgrimage opportunity, or a partnership with Kebtah — we welcome your inquiry with openness and care.</p>
+        <p>NABA Iritah serves communities globally and operates with the full accountability of his lineage, his elders, and the living tradition he carries.</p>
+
+        <div class="contact-channels">
+          <a href="https://www.dogonwisdom.com" class="channel-item" target="_blank">
+            <div class="channel-icon">◈</div>
+            <div>
+              <span class="channel-label">Website</span>
+              <span class="channel-value">dogonwisdom.com</span>
+            </div>
+          </a>
+          <div class="channel-item">
+            <div class="channel-icon">◈</div>
+            <div>
+              <span class="channel-label">Organization</span>
+              <span class="channel-value">Kebtah — International Nonprofit</span>
+            </div>
+          </div>
+          <div class="channel-item">
+            <div class="channel-icon">◈</div>
+            <div>
+              <span class="channel-label">Healing Collective</span>
+              <span class="channel-value">Ankhkasta Natural Healing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form reveal">
+        <div class="form-field">
+          <label class="form-label">Full Name</label>
+          <input class="form-input" type="text" placeholder="Your full name">
+        </div>
+        <div class="form-field">
+          <label class="form-label">Email Address</label>
+          <input class="form-input" type="email" placeholder="your@email.com">
+        </div>
+        <div class="form-field">
+          <label class="form-label">Nature of Inquiry</label>
+          <select class="form-select">
+            <option value="">Select a topic</option>
+            <option>Personal Divination Reading (M'TAM)</option>
+            <option>Healing Consultation</option>
+            <option>Speaking Engagement / Keynote</option>
+            <option>Pilgrimage or Retreat Interest</option>
+            <option>Courses & Educational Programs</option>
+            <option>Organizational / Leadership Consulting</option>
+            <option>Media / Press Inquiry</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" placeholder="Please share what brings you here and how we may best serve you…"></textarea>
+        </div>
+        <button class="btn-primary" style="cursor:pointer; border:none; width:100%; font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.2em;">
+          Send Your Inquiry
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-logo">NABA Iritah Shenmira</div>
+  <ul class="footer-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#books">Books</a></li>
+    <li><a href="#speaking">Speaking</a></li>
+    <li><a href="#pilgrimages">Pilgrimages</a></li>
+    <li><a href="#media">Media</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <p class="footer-copy">© 2025 NABA Iritah Shenmira. All rights reserved.</p>
+</footer>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
